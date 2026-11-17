@@ -1,14 +1,13 @@
 import React from "react";
-import AboutHero from "@/components/about/AboutHero";
-import OurHistory from "@/components/about/OurHistory";
-import VisionMission from "@/components/about/VisionMission";
-import LeadershipMessage from "@/components/about/LeadershipMessage";
-import CorporateStructure from "@/components/about/CorporateStructure";
+import HomeMotion from "@/components/home/HomeMotion";
+import AboutHeader from "@/components/about/AboutHeader";
+import ChairmansMessage from "@/components/about/ChairmansMessage";
+import CorePillars from "@/components/about/CorePillars";
 
 export const metadata = {
-  title: "About Us | Heritage, Vision & Leadership",
+  title: "About Us | Leadership & Heritage",
   description:
-    "Learn about MF Corporation's 22+ year journey since 1st April 1998 under Chairman Tahir Yaseen, our vision, mission, sustainability commitment, and our subsidiaries MF Express and MF Packages.",
+    "Discover MF Corporation's heritage since April 1, 1998, Chairman Tahir Yaseen's leadership message, and our commitment to logistics excellence and sustainable packaging.",
   alternates: {
     canonical: "/about",
   },
@@ -16,12 +15,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <>
-      <AboutHero />
-      <OurHistory />
-      <VisionMission />
-      <LeadershipMessage />
-      <CorporateStructure />
-    </>
+    <HomeMotion>
+      <AboutHeader />
+      <ChairmansMessage />
+      <CorePillars />
+    </HomeMotion>
   );
 }

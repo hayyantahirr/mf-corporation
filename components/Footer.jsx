@@ -2,10 +2,11 @@ import React from "react";
 import Link from "next/link";
 
 const navigationLinks = [
-  { label: "Overview", href: "/" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
   { label: "MF Express", href: "/express" },
   { label: "MF Packages", href: "/packages" },
-  { label: "Leadership & Heritage", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const divisionLinks = [

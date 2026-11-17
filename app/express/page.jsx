@@ -1,17 +1,16 @@
 import React from "react";
-import ExpressHero from "@/components/mf-express/ExpressHero";
-import WhatWeDo from "@/components/mf-express/WhatWeDo";
-import ShippingProcess from "@/components/mf-express/ShippingProcess";
-import LogisticsServices from "@/components/mf-express/LogisticsServices";
-import ExpressVisionMission from "@/components/mf-express/ExpressVisionMission";
-import ExpressCTA from "@/components/mf-express/ExpressCTA";
+import HomeMotion from "@/components/home/HomeMotion";
+import ExpressHeader from "@/components/express/ExpressHeader";
+import VisionMissionSplit from "@/components/express/VisionMissionSplit";
+import HowItWorksGrid from "@/components/express/HowItWorksGrid";
+import ExpressCTABanner from "@/components/express/ExpressCTABanner";
 
 export const metadata = {
-  title: "MF Express | China to Pakistan Shipping, Warehousing & Customs",
+  title: "MF Express | China to Pakistan Shipping & Warehousing",
   description:
-    "MF Express, a subsidiary of MF Corporation, offers a one-stop international shipping solution from China to Pakistan—China warehouse storage, consolidation for Alibaba, DHgate & Made in China orders, custom clearance, and doorstep delivery.",
+    "One-stop China-to-Pakistan shipping, China warehousing, shipment consolidation, customs clearance, and doorstep delivery by MF Corporation.",
   alternates: {
-    canonical: "/mf-express",
+    canonical: "/express",
   },
 };
 
@@ -19,7 +18,7 @@ export default function MFExpressPage() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "MF Express China-to-Pakistan Shipping & Consolidation",
+    name: "MF Express China-to-Pakistan Shipping & Warehousing",
     provider: {
       "@type": "Organization",
       name: "MF Express",
@@ -31,14 +30,14 @@ export default function MFExpressPage() {
     areaServed: ["CN", "PK"],
     serviceType: [
       "China to Pakistan International Shipping",
-      "China Warehouse Consolidation",
-      "Custom Clearance",
+      "China Warehouse Storage & Consolidation",
+      "Pakistan Customs Clearance",
       "Freight Forwarding",
       "Project Cargo Handling",
-      "Doorstep Parcel Delivery",
+      "Doorstep Delivery",
     ],
     description:
-      "One-stop international shipping from China to Pakistan enabling SMEs and shoppers to store goods at our China warehouse, consolidate shipments, clear Pakistani customs, and receive doorstep delivery.",
+      "One-stop international shipping from China to Pakistan enabling businesses and shoppers to store goods at our China warehouse, consolidate orders, clear customs, and receive doorstep delivery.",
   };
 
   return (
@@ -49,12 +48,12 @@ export default function MFExpressPage() {
           __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <ExpressHero />
-      <WhatWeDo />
-      <ShippingProcess />
-      <LogisticsServices />
-      <ExpressVisionMission />
-      <ExpressCTA />
+      <HomeMotion>
+        <ExpressHeader />
+        <VisionMissionSplit />
+        <HowItWorksGrid />
+        <ExpressCTABanner />
+      </HomeMotion>
     </>
   );
 }
