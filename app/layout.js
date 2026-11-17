@@ -121,7 +121,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 font-sans">
+      <body className="min-h-full flex flex-col bg-white text-neutral-900 font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
