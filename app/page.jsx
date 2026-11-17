@@ -1,14 +1,14 @@
 import React from "react";
+import HomeMotion from "@/components/home/HomeMotion";
 import Hero from "@/components/home/Hero";
-import CompanySummary from "@/components/home/CompanySummary";
-import VisionSection from "@/components/home/VisionSection";
-import Testimonials from "@/components/home/Testimonials";
+import MetricsStrip from "@/components/home/MetricsStrip";
+import CompaniesShowcase from "@/components/home/CompaniesShowcase";
 
 export const metadata = {
   title:
-    "MF Corporation | Parent Company of MF Express & MF Packages Since 1998",
+    "MF Corporation | Powering Global Trade & Sustainable Packaging Since 1998",
   description:
-    "MF Corporation is the parent organization of MF Express (China-to-Pakistan shipping & consolidation) and MF Packages (custom flexible packaging & printing).",
+    "Established April 1, 1998 in Karachi, Pakistan, MF Corporation is the parent company of MF Express (China-to-Pakistan logistics) and MF Packages (custom flexible packaging & printing).",
   alternates: {
     canonical: "/",
   },
@@ -16,11 +16,10 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <HomeMotion>
       <Hero />
-      <CompanySummary />
-      <VisionSection />
-      <Testimonials />
-    </>
+      <MetricsStrip />
+      <CompaniesShowcase />
+    </HomeMotion>
   );
 }

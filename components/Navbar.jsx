@@ -5,11 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "MF Express", href: "/mf-express" },
-  { label: "MF Packages", href: "/mf-packages" },
-  { label: "Contact", href: "/contact" },
+  { label: "Overview", href: "/" },
+  { label: "MF Express", href: "/express" },
+  { label: "MF Packages", href: "/packages" },
+  { label: "Leadership & Heritage", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -22,58 +21,57 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-100 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-[#E2E8F0] bg-[#FFFFFF]/95 backdrop-blur-md">
       <nav
-        aria-label="Main Navigation"
-        className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        aria-label="Primary Navigation"
+        className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 sm:px-8 lg:px-12"
       >
-        {/* Brand Identity */}
+        {/* Left: Clean Typographic Lockup + 8px Red Square Mark */}
         <Link
           href="/"
-          className="group flex items-center gap-3 focus:outline-none"
           onClick={() => setMobileMenuOpen(false)}
+          className="inline-flex items-center gap-3 focus:outline-none"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
-            <span className="text-sm font-black tracking-tight">MF</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-lg font-extrabold tracking-tight text-neutral-900 leading-none">
-              MF Corporation
-            </span>
-            <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-red leading-none">
-              Est. 1998
-            </span>
-          </div>
+          <span
+            className="h-2 w-2 shrink-0 bg-[#ED3B09]"
+            aria-hidden="true"
+          />
+          <span className="font-heading text-base font-bold tracking-[0.06em] text-[#0F172A] uppercase sm:text-lg">
+            MF CORPORATION
+          </span>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex md:items-center md:gap-2">
+        {/* Right: Minimal Horizontal Links */}
+        <div className="hidden md:flex md:h-full md:items-center md:gap-8 lg:gap-10">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                className={`relative flex h-full items-center text-sm font-medium transition-colors duration-250 ${
                   active
-                    ? "bg-brand-red text-white shadow-sm"
-                    : "text-neutral-700 hover:bg-brand-red/5 hover:text-brand-red"
+                    ? "font-semibold text-[#0F172A]"
+                    : "text-[#475569] hover:text-[#0F172A]"
                 }`}
               >
                 <span>{link.label}</span>
-                {!active && (
-                  <span className="absolute inset-x-4 bottom-1 h-0.5 scale-x-0 rounded-full bg-brand-red transition-transform duration-200 group-hover:scale-x-100" />
+                {active && (
+                  <span
+                    className="absolute inset-x-0 bottom-0 h-[2px] bg-[#ED3B09]"
+                    aria-hidden="true"
+                  />
                 )}
               </Link>
             );
           })}
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-xl border border-neutral-200 bg-white p-2.5 text-neutral-800 transition-colors hover:border-brand-red hover:text-brand-red md:hidden"
+          className="inline-flex items-center justify-center border border-[#E2E8F0] bg-[#FFFFFF] p-2.5 text-[#0F172A] transition-colors duration-250 hover:border-[#0F172A] md:hidden"
           aria-expanded={mobileMenuOpen}
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
@@ -83,9 +81,8 @@ export default function Navbar() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              strokeWidth="1.75"
+              strokeLinecap="square"
               aria-hidden="true"
             >
               <path d="M18 6 6 18" />
@@ -97,14 +94,13 @@ export default function Navbar() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              strokeWidth="1.75"
+              strokeLinecap="square"
               aria-hidden="true"
             >
+              <line x1="4" x2="20" y1="7" y2="7" />
               <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
+              <line x1="4" x2="20" y1="17" y2="17" />
             </svg>
           )}
         </button>
@@ -112,8 +108,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="border-t border-neutral-100 bg-white px-4 pb-5 pt-3 shadow-lg md:hidden">
-          <div className="flex flex-col space-y-1.5">
+        <div className="border-t border-[#E2E8F0] bg-[#FFFFFF] px-6 py-4 md:hidden">
+          <div className="flex flex-col divide-y divide-[#E2E8F0]">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
@@ -121,13 +117,17 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
-                    active
-                      ? "bg-brand-red text-white"
-                      : "text-neutral-700 hover:bg-brand-red/5 hover:text-brand-red"
+                  className={`flex items-center justify-between py-3.5 text-sm font-medium transition-colors duration-250 ${
+                    active ? "font-semibold text-[#0F172A]" : "text-[#475569]"
                   }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  {active && (
+                    <span
+                      className="h-2 w-2 bg-[#ED3B09]"
+                      aria-hidden="true"
+                    />
+                  )}
                 </Link>
               );
             })}
