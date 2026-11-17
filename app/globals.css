@@ -1,2 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-red: #ED3B09;
+  --color-brand-red-hover: #D13206;
+  --color-brand-dark: #0F172A;
+  --color-brand-charcoal: #18181B;
+  --color-brand-light: #F8FAFC;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
