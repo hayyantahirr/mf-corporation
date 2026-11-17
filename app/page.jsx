@@ -3,6 +3,8 @@ import HomeMotion from "@/components/home/HomeMotion";
 import Hero from "@/components/home/Hero";
 import MetricsStrip from "@/components/home/MetricsStrip";
 import CompaniesShowcase from "@/components/home/CompaniesShowcase";
+import OurVision from "@/components/home/OurVision";
+import FAQs from "@/components/home/FAQs";
 
 export const metadata = {
   title:
@@ -18,8 +20,10 @@ export default function HomePage() {
   return (
     <HomeMotion>
       <Hero />
-      <MetricsStrip />
+      {/* <MetricsStrip /> */}
       <CompaniesShowcase />
+      <OurVision />
+      <FAQs />
     </HomeMotion>
   );
 }
