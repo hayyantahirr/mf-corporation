@@ -127,19 +127,41 @@ export default function OrderAndContact() {
 
               <div className="flex flex-col items-start gap-4">
                 <a
-                  href="https://www.mfpackages.com"
+                  href="https://www.mfpackages.com/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-none bg-[#ED3B09] px-7 py-4 text-sm font-semibold text-[#FFFFFF] transition-colors duration-250 hover:bg-[#C82E04]"
                 >
-                  Visit mfpackages.com &rarr;
+                  Visit mfpackages.com/contact &#8599;
                 </a>
+
+                <div className="flex flex-wrap items-center gap-4 text-sm font-semibold">
+                  <a
+                    href="https://www.mfpackages.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#0F172A] transition-colors duration-250 hover:text-[#ED3B09]"
+                  >
+                    mfpackages.com &#8599;
+                  </a>
+                  <span className="text-[#E2E8F0]" aria-hidden="true">
+                    /
+                  </span>
+                  <a
+                    href="https://mfexpress.pk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#475569] transition-colors duration-250 hover:text-[#ED3B09]"
+                  >
+                    mfexpress.pk &#8599;
+                  </a>
+                </div>
 
                 <Link
                   href="/contact"
                   className="group inline-flex items-center gap-2 text-sm font-semibold text-[#0F172A] transition-colors duration-250 hover:text-[#ED3B09]"
                 >
-                  <span>Submit Corporate Inquiry</span>
+                  <span>Group Contact Directory</span>
                   <span
                     aria-hidden="true"
                     className="inline-block transition-transform duration-250 group-hover:translate-x-1"

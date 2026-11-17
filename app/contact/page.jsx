@@ -1,30 +1,38 @@
 import React from "react";
-import ContactHero from "@/components/contact/ContactHero";
-import ContactCards from "@/components/contact/ContactCards";
-import ContactForm from "@/components/contact/ContactForm";
-import ContactFAQ, { contactFaqs } from "@/components/contact/ContactFAQ";
+import HomeMotion from "@/components/home/HomeMotion";
+import ContactHeader from "@/components/contact/ContactHeader";
+import DivisionChannels from "@/components/contact/DivisionChannels";
+import LocationAndDirectory from "@/components/contact/LocationAndDirectory";
 
 export const metadata = {
-  title: "Contact Us | Karachi Headquarters & Quote Desk",
+  title: "Contact Us | Karachi Headquarters & Division Channels",
   description:
-    "Contact MF Corporation, MF Express, or MF Packages in Karachi, Pakistan at Suit #9, Rafiq Mansion, Jethamal Road. Call +92 332 2464729 or email info@mfpackages.com for China-to-Pakistan shipping and custom flexible packaging quotes.",
+    "Contact MF Corporation in Karachi at Suite #9, Rafiq Mansion, Jethamal Road. Reach MF Packages at mfpackages.com/contact or message MF Express on WhatsApp at 0332 2464729.",
   alternates: {
     canonical: "/contact",
   },
 };
 
 export default function ContactPage() {
-  const faqJsonLd = {
+  const contactJsonLd = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: contactFaqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
+    "@type": "ContactPage",
+    name: "MF Corporation Contact Directory",
+    url: "https://mfcorporation.com/contact",
+    mainEntity: {
+      "@type": "Corporation",
+      name: "MF Corporation",
+      telephone: "+923322464729",
+      email: "info@mfpackages.com",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Suite #9, Rafiq Mansion, Jethamal Road",
+        addressLocality: "Karachi",
+        addressRegion: "Sindh",
+        addressCountry: "PK",
       },
-    })),
+      sameAs: ["https://www.mfpackages.com", "https://mfexpress.pk"],
+    },
   };
 
   return (
@@ -32,13 +40,14 @@ export default function ContactPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(contactJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <ContactHero />
-      <ContactCards />
-      <ContactForm />
-      <ContactFAQ />
+      <HomeMotion>
+        <ContactHeader />
+        <DivisionChannels />
+        <LocationAndDirectory />
+      </HomeMotion>
     </>
   );
 }

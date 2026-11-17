@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const companyLinks = [
@@ -79,7 +80,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex h-full w-full max-w-[1280px] items-center justify-between">
-          {/* Left: Clean Typographic Lockup + 8px Red Square Mark */}
+          {/* Left: Brand Logo + Typographic Lockup */}
           <Link
             href="/"
             onClick={() => {
@@ -89,9 +90,19 @@ export default function Navbar() {
             className="inline-flex items-center gap-3 focus:outline-none"
           >
             <span
-              className="h-2 w-2 shrink-0 bg-[#ED3B09]"
-              aria-hidden="true"
-            />
+              className={`relative shrink-0 transition-all duration-300 ${
+                scrolled ? "h-6 w-8" : "h-7 w-10"
+              }`}
+            >
+              <Image
+                src="/logo.png"
+                alt="MF Corporation Logo"
+                fill
+                sizes="40px"
+                priority
+                className="object-contain"
+              />
+            </span>
             <span
               className={`font-heading font-bold tracking-[0.06em] text-[#0F172A] uppercase transition-all duration-300 ${
                 scrolled ? "text-sm sm:text-base" : "text-base sm:text-lg"

@@ -12,7 +12,8 @@ const navigationLinks = [
 const divisionLinks = [
   { label: "MF Express — China-to-Pakistan Logistics", href: "/express" },
   { label: "MF Packages — Custom Flexible Packaging", href: "/packages" },
-  { label: "MF Packages Storefront", href: "https://www.mfpackages.com", external: true },
+  { label: "mfexpress.pk Portal", href: "https://mfexpress.pk", external: true },
+  { label: "mfpackages.com Storefront", href: "https://www.mfpackages.com", external: true },
 ];
 
 export default function Footer() {

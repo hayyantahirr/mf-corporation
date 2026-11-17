@@ -28,13 +28,22 @@ export default function ExpressHeader() {
           straight to your doorstep.
         </p>
 
-        <div data-hero-reveal className="mt-10">
+        <div data-hero-reveal className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-none bg-[#ED3B09] px-7 py-4 text-sm font-semibold text-[#FFFFFF] transition-colors duration-250 hover:bg-[#C82E04]"
           >
             Get Your China Warehouse Address
           </Link>
+
+          <a
+            href="https://mfexpress.pk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-none border border-[#E2E8F0] bg-[#FFFFFF] px-7 py-4 text-sm font-semibold text-[#0F172A] transition-colors duration-250 hover:border-[#0F172A]"
+          >
+            Visit mfexpress.pk &#8599;
+          </a>
         </div>
       </div>
     </section>

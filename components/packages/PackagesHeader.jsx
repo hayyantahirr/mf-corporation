@@ -29,15 +29,26 @@ export default function PackagesHeader() {
 
         <div data-hero-reveal className="mt-10 flex flex-wrap gap-4">
           <a
-            href="#packages-contact"
+            href="https://www.mfpackages.com/contact"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-none bg-[#ED3B09] px-7 py-4 text-sm font-semibold text-[#FFFFFF] transition-colors duration-250 hover:bg-[#C82E04]"
           >
-            Request a Packaging Quote
+            Request a Packaging Quote &#8599;
+          </a>
+
+          <a
+            href="https://www.mfpackages.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-none border border-[#E2E8F0] bg-[#FFFFFF] px-7 py-4 text-sm font-semibold text-[#0F172A] transition-colors duration-250 hover:border-[#0F172A]"
+          >
+            Visit mfpackages.com &#8599;
           </a>
 
           <a
             href="#formats"
-            className="inline-flex items-center justify-center rounded-none border border-[#E2E8F0] bg-[#FFFFFF] px-7 py-4 text-sm font-semibold text-[#0F172A] transition-colors duration-250 hover:border-[#0F172A]"
+            className="inline-flex items-center justify-center rounded-none border border-[#E2E8F0] bg-[#FFFFFF] px-7 py-4 text-sm font-semibold text-[#475569] transition-colors duration-250 hover:border-[#0F172A] hover:text-[#0F172A]"
           >
             View Product Formats
           </a>
