@@ -13,8 +13,12 @@ const navigationLinks = [
 const divisionLinks = [
   { label: "MF Express — China-to-Pakistan Logistics", href: "/express" },
   { label: "MF Packages — Custom Flexible Packaging", href: "/packages" },
-  { label: "mfexpress.pk Portal", href: "https://mfexpress.pk", external: true },
-  { label: "mfpackages.com Storefront", href: "https://www.mfpackages.com", external: true },
+  { label: "mfexpress.pk", href: "https://mfexpress.pk", external: true },
+  {
+    label: "mfpackages.com",
+    href: "https://www.mfpackages.com",
+    external: true,
+  },
 ];
 
 export default function Footer() {
@@ -109,14 +113,7 @@ export default function Footer() {
                   +92 332 2464729
                 </a>
               </li>
-              <li>
-                <a
-                  href="mailto:info@mfpackages.com"
-                  className="transition-colors duration-250 hover:text-[#FFFFFF]"
-                >
-                  info@mfpackages.com
-                </a>
-              </li>
+
               <li>
                 <a
                   href="mailto:mfpackages0@gmail.com"
@@ -131,7 +128,17 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-slate-800 pt-8 text-xs text-slate-400 sm:flex-row sm:items-center">
           <p>&copy; 2026 MF Corporation. All rights reserved.</p>
-          <p>Chairman: Tahir Yaseen &bull; Est. April 1, 1998</p>
+
+          <p>
+            Powered By &bull;{" "}
+            <Link
+              href="https://hayyantahirr.vercel.app"
+              target="_blank"
+              className="underline text-[#ED3B09]"
+            >
+              hayyantahirr
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
