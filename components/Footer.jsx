@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigationLinks = [
   { label: "Home", href: "/" },
@@ -24,10 +25,15 @@ export default function Footer() {
           {/* Brand Summary */}
           <div className="md:col-span-12 lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3">
-              <span
-                className="h-2 w-2 shrink-0 bg-[#ED3B09]"
-                aria-hidden="true"
-              />
+              <span className="relative h-7 w-10 shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="MF Corporation Logo"
+                  fill
+                  sizes="40px"
+                  className="object-contain"
+                />
+              </span>
               <span className="font-heading text-base font-bold tracking-[0.06em] text-[#FFFFFF] uppercase">
                 MF CORPORATION
               </span>
